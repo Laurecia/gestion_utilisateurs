@@ -2,7 +2,7 @@
 xls2csv list.xls > converted.csv
 
 input="/home/info/Documents/Embauche/converted.csv"
-array=($(awk -F : "{print $1} /etc/passwd ))
+array=($(awk -F : "{print $1}" /etc/passwd ))
 i=0;
 
 while IFS=read -r line
@@ -17,7 +17,7 @@ do
                  fi
            done
            if ["si" = 0]; then
-                  echo "$line"
-                  useradd $line/
+                  useradd $line
+                  user11 $line
             fi
 done < "$input"
