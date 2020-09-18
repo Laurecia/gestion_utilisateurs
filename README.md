@@ -1,12 +1,19 @@
 # gestion_utilisateurs
 #! /bin/bash
+# convertir  le fichier.xls en csv
 xls2csv list.xls > converted.csv 
+# chemin qui mene au fichier.xls
 input="/home/info/Documents/Embauche/converted.csv"
-//localisation du fichier xls
+
+# utiliser pour lister les utilisateur
 
 array=($(awk -F : "{print $1}" /etc/passwd ))
+
+
+# initialisation
 i=0;
-//droit aux groupes
+
+# lire la ligne
 
 while IFS=read -r line
 do
@@ -19,6 +26,8 @@ do
 
                  fi
            done
+           #comparer
+
            if ["si" = 0]; then
                   useradd $line
                   user11 $line
